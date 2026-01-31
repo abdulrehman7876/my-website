@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #212121;
+}
+
+.active-link.nav-hover::after {
+  width: 100%;
+}
+
+.nav-hover::after {
+  transition: all 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0px;
+  left: 0;
+  background-color: #f2cc0f;
+}
+.nav-hover:hover::after {
+  width: 100%;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.btn-hover:hover {
+  box-shadow: 0 0 20px rgba(242, 204, 15, 0.5);
+  cursor: pointer;
+}
+
+.my-border:hover {
+  border-color: #f2cc0f;
+}
+
+.head {
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: headMove 1s ease-in-out infinite alternate;
+}
+
+.mainBody {
+  transform-box: fill-box;
+  transform-origin: left;
+  animation: bodyMove 1s ease-in-out infinite alternate;
+}
+
+.lines {
+  transform-box: fill-box;
+  transform-origin: left;
+  animation: lineMove 0.9s ease-in-out infinite;
+}
+@keyframes lineMove {
+  from {
+    transform: scaleX(0.001);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes bodyMove {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0.98);
+  }
+}
+
+@keyframes headMove {
+  from {
+    transform: rotate(-1deg);
+  }
+  to {
+    transform: rotate(10deg);
+  }
+}
+
+.myanimation {
+  animation: zoomIn 1s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hand {
+  animation: 1.5s Infinite linear shake;
+  animation-delay: 0s;
+}
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+@media (max-width: 768px) {
+  .myanimation {
+    animation-duration: 1.5s;
+  }
+}
