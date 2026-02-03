@@ -124,6 +124,19 @@ body {
 }
 @media (max-width: 768px) {
   .myanimation {
-    animation-duration: 1.5s;
+    animation: none;
+  }
+  .custom-anim {
+    animation: mobzoomIn 1s ease-in-out infinite alternate;
+    transform-origin: center;
+    will-change: transform;
+  }
+  @keyframes mobzoomIn {
+    0% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 }

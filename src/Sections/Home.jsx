@@ -17,7 +17,6 @@ export default function Home() {
         <div className="w-auto pt-5 -right-20 lg:right-0 absolute inset-0 pointer-events-none mouse-events-none hidden sm:flex justify-end -bottom-100">
           <img
             className="h-full lg:h-200 2xl:h-auto object-cover"
-            loading="lazy"
             src="/Mypic.webp"
             alt="Picture"
           />
