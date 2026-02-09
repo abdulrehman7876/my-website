@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import About from "./Sections/About";
@@ -19,7 +19,6 @@ function App() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setNavActive(`#${entry.target.id}`);
-            console.log(entry.target.id);
           }
         });
       },
