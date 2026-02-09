@@ -6,6 +6,7 @@ import Contact from "./Sections/Contact";
 import Home from "./Sections/Home";
 import Portfolio from "./Sections/Portfolio";
 import Services from "./Sections/Services";
+import Whatsapp from "./Components/Whatsapp";
 
 function App() {
   const [navActive, setNavActive] = useState("");
@@ -35,6 +36,7 @@ function App() {
   return (
     <>
       <Header navActive={navActive} setNavActive={setNavActive} />
+      <Whatsapp />
       <Home />
       <About />
       <Services />
