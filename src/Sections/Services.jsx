@@ -5,7 +5,7 @@ export default function Services() {
     {
       title: "Web Development",
       description:
-        "Building responsive and modern web applications using React.js, JavaScript, and Tailwind CSS with clean, maintainable code.",
+        "Custom responsive websites built using React.js and modern web technologies to ensure speed, performance, and scalability.",
       icon: <WebDevelopmentIcon />,
     },
     {
@@ -32,7 +32,8 @@ export default function Services() {
           What I Offer
         </h2>
         <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-          Professional services tailored to bring your digital vision to life
+          Professional services tailored to bring your digital vision to real
+          website
         </p>
 
         <div className="grid md:grid-cols-3 gap-8">

@@ -97,10 +97,11 @@ export default function About() {
               What I Do
             </h3>
             <p className="text-gray-400 leading-relaxed mb-4">
-              I'm a multi-disciplinary creative professional who bridges the gap
-              between design and development. My journey in tech started with a
-              fascination for visual design, which naturally evolved into
-              front-end development.
+              I am a professional Front-End Developer based in Pakistan with
+              strong expertise in React.js, JavaScript, HTML, and Tailwind CSS.
+              I focus on creating visually appealing and performance-optimized
+              websites that not only look great but also convert visitors into
+              customers.
             </p>
             <p className="text-gray-400 leading-relaxed mb-4">
               As a front-end developer, I build responsive, accessible web

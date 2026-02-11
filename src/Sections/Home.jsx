@@ -29,10 +29,11 @@ export default function Home() {
             Front-End Developer
           </h2>
           <p className="text-white md:text-lg leading-relaxed mt-3 md:mt-4 sm:w-1/2">
-            Passionate about crafting beautiful, functional web experiences and
-            stunning visual designs. I specialize in transforming ideas into
-            pixel-perfect interfaces. With expertise in modern web technologies
-            and graphic design.
+            A passionate Front-End Developer specializing in React.js and
+            Tailwind CSS. I build modern, fast, and fully responsive websites
+            that deliver seamless user experiences across all devices. Whether
+            you need a landing page, business website, or web application, I
+            focus on performance, clean UI, and scalable solutions.
           </p>
           <div className="flex gap-4 mt-8">
             <button
