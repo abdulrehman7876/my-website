@@ -155,7 +155,7 @@ export default function Header({ navActive, setNavActive }) {
 
       <button
         aria-label="Download Resume"
-        className="bg-[#f2cc0f] rounded-lg px-3 md:px-6 py-1 pb-2 text-black font-semibold btn-hover transition-all duration-300"
+        className="bg-[#f2cc0f] rounded-lg px-3 md:px-6 py-1 pb-1.5 sm:pb-2 text-black font-semibold btn-hover transition-all duration-300"
       >
         <a
           aria-label="download"
