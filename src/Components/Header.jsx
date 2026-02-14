@@ -149,7 +149,8 @@ export default function Header({ navActive, setNavActive }) {
         </ul>
       </nav>
       <div
-        className={`absolute inset-0 z-51 h-screen w-screen bg-black/70 md:hidden pointer-events-none ${isMenuOpen ? "" : "hidden"}`}
+        onClick={() => setIsMenuOpen(false)}
+        className={`absolute inset-0 z-51 h-screen w-screen bg-black/70 md:hidden ${isMenuOpen ? "" : "hidden"}`}
       ></div>
 
       <button

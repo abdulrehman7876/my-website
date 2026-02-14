@@ -4,7 +4,6 @@ export const WebDevelopmentIcon = () => {
       xmlns="http://www.w3.org/2000/svg"
       height="100%"
       viewBox="0 0 800 572.62"
-      width="300"
       xmlns:v="https://vecta.io/nano"
     >
       <path

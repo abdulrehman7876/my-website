@@ -13,7 +13,7 @@ export default function Services() {
       description:
         "Creating intuitive and engaging user interfaces with a focus on user experience and modern design principles.",
       icon: (
-        <img className="h-full myanimation custom-anim" src={UiUx} alt="" />
+        <img className="h-full myanimation custom-anim" src={UiUx} alt={UiUx} />
       ),
     },
     {
