@@ -30,7 +30,7 @@ export default function Footer() {
             <div className="space-y-2">
               <a
                 aria-label="home"
-                href="#"
+                href="/"
                 className="block text-gray-400 transition hover:text-[#F2CC0F] hover:translate-x-2"
               >
                 Home

@@ -60,7 +60,7 @@ export default function Header({ navActive, setNavActive }) {
             <a
               aria-label="Home"
               className={`w-max nav-hover h-full flex items-center justify-center`}
-              href="#"
+              href="/"
             >
               Home
             </a>

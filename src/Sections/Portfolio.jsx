@@ -95,23 +95,23 @@ export default function Portfolio() {
         <Slider ref={sliderRef} {...settings} className="2xl:max-w-[1536px]">
           {projects.map((p, i) => (
             <div key={i} className="px-2 md:px-4 text-center">
-              <img
-                loading="lazy"
-                src={p.image}
-                alt={p.title}
-                className="w-full sm:h-120 object-cover hover:scale-105 transition"
-              />
-              <h3 className="text-white text-xl mt-4 text-center hover:text-[#f2cc0f]">
-                <a
-                  aria-label={p.title}
-                  href={p.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+              <a
+                aria-label={p.title}
+                href={p.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  loading="lazy"
+                  src={p.image}
+                  alt={p.title}
+                  className="w-full sm:h-120 object-cover hover:scale-105 transition"
+                />
+                <h3 className="text-white text-xl mt-4 text-center hover:text-[#f2cc0f]">
                   {p.title}
-                </a>
-              </h3>
-              <p className="text-gray-400 text-center">{p.category}</p>
+                </h3>
+                <p className="text-gray-400 text-center">{p.category}</p>
+              </a>
             </div>
           ))}
         </Slider>

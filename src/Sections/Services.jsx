@@ -1,5 +1,5 @@
-import { WebDevelopmentIcon, UiUxIcon, GraphicDesignIcon } from "../assets/Svg";
-
+import { WebDevelopmentIcon, GraphicDesignIcon } from "../assets/Svg";
+import UiUx from "../assets/UiUx.svg";
 export default function Services() {
   const services = [
     {
@@ -12,7 +12,9 @@ export default function Services() {
       title: "UI/UX Design",
       description:
         "Creating intuitive and engaging user interfaces with a focus on user experience and modern design principles.",
-      icon: <UiUxIcon />,
+      icon: (
+        <img className="h-full myanimation custom-anim" src={UiUx} alt="" />
+      ),
     },
     {
       title: "Graphic Design",
