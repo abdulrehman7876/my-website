@@ -259,10 +259,10 @@ export default function Contact() {
                 Let's Build Something Great
               </h3>
               <p className="leading-relaxed">
-                I'm always excited to take on new challenges and collaborate on
-                innovative projects. Whether you need a stunning website, a
-                beautiful UI design, or eye-catching graphics, I'm here to help
-                bring your vision to life.
+                Have a project in mind? Let's work together to build a modern,
+                high-performance website. Whether you need a custom website,
+                WordPress website, Shopify website, or a fast React website, I’m
+                here to help bring your ideas to life.
               </p>
             </div>
           </div>

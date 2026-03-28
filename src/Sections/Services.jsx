@@ -5,13 +5,13 @@ export default function Services() {
     {
       title: "Web Development",
       description:
-        "Custom responsive websites built using React.js and modern web technologies to ensure speed, performance, and scalability.",
+        "I build modern, responsive, and SEO-friendly websites including custom websites, WordPress websites, Shopify websites, and high-performance React websites. My focus is on speed, scalability, and user experience to help your business grow online.",
       icon: <WebDevelopmentIcon />,
     },
     {
       title: "UI/UX Design",
       description:
-        "Creating intuitive and engaging user interfaces with a focus on user experience and modern design principles.",
+        "I design intuitive and visually engaging interfaces for websites, ensuring smooth user experience and modern design standards for custom websites, WordPress websites, Shopify websites, and React websites.",
       icon: (
         <img className="h-full myanimation custom-anim" src={UiUx} alt={UiUx} />
       ),
@@ -19,7 +19,7 @@ export default function Services() {
     {
       title: "Graphic Design",
       description:
-        "Designing eye-catching posters, illustrations, and vector graphics that communicate your message effectively.",
+        "I create eye-catching visuals, graphics, and branding elements that enhance your website, including custom website designs, WordPress website visuals, Shopify website assets, and React website interfaces.",
       icon: <GraphicDesignIcon />,
     },
   ];
@@ -34,8 +34,9 @@ export default function Services() {
           What I Offer
         </h2>
         <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-          Professional services tailored to bring your digital vision to real
-          website
+          Professional services to build modern, high-performance websites
+          including custom websites, WordPress websites, Shopify websites, and
+          React websites.
         </p>
 
         <div className="grid md:grid-cols-3 gap-8">

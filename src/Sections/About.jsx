@@ -14,6 +14,7 @@ export default function About() {
     { name: "UI/UX Design", level: 88 },
     { name: "Adobe Illustrator", level: 92 },
     { name: "Wordpress", level: 95 },
+    { name: "Shopify", level: 90 },
   ];
 
   useEffect(() => {
@@ -97,22 +98,23 @@ export default function About() {
               What I Do
             </h3>
             <p className="text-gray-400 leading-relaxed mb-4">
-              I am a professional Front-End Developer based in Pakistan with
-              strong expertise in React.js, JavaScript, HTML, and Tailwind CSS.
-              I focus on creating visually appealing and performance-optimized
-              websites that not only look great but also convert visitors into
-              customers.
+              I am a professional Front-End Developer based in Pakistan,
+              specializing in building modern, responsive, and SEO-friendly
+              websites using React.js, JavaScript, HTML, and Tailwind CSS. I
+              create high-performance solutions designed to deliver excellent
+              user experience and business growth.
             </p>
             <p className="text-gray-400 leading-relaxed mb-4">
-              As a front-end developer, I build responsive, accessible web
-              applications using modern frameworks and best practices. My design
-              background gives me a unique perspective on creating interfaces
-              that are not only functional but also visually compelling.
+              I develop custom websites tailored to your needs, including
+              professional WordPress websites, scalable Shopify websites, and
+              dynamic React websites. My focus is on clean design, fast loading
+              speed, and optimized performance to ensure your website stands out
+              and converts visitors into customers.
             </p>
             <p className="text-gray-400 leading-relaxed">
-              Whether it's developing a complex web application, designing an
-              intuitive user interface, or creating stunning Logo Designs, I
-              approach each project with dedication and attention to detail.
+              Whether you need a business website, landing page, or full web
+              application, I combine development and design expertise to build
+              visually appealing and highly functional digital experiences.
             </p>
           </div>
         </div>
