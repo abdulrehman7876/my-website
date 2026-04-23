@@ -1,5 +1,65 @@
 @import "tailwindcss";
 
+:root {
+  --gold: #f2cc0f;
+  --gold-dim: rgba(242, 204, 15, 0.1);
+  --gold-mid: rgba(242, 204, 15, 0.35);
+  --bg-base: #0d0d0d;
+  --bg-surface: #111111;
+  --bg-card: #161616;
+  --border: rgba(255, 255, 255, 0.07);
+  --text-primary: #ede9e0;
+  --text-secondary: #7a7570;
+  --text-muted: #3d3b38;
+}
+
+body {
+  background-color: var(--bg-base);
+  font-family: "DM Sans", sans-serif;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.section-label {
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::before,
+.section-label::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 2rem;
+  background: var(--gold);
+  opacity: 0.5;
+}
+/* cards */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition:
+    border-color 0.35s,
+    box-shadow 0.35s;
+}
+.card:hover {
+  border-color: rgba(242, 204, 15, 0.25);
+  box-shadow:
+    0 0 50px rgba(242, 204, 15, 0.04),
+    inset 0 0 0 1px rgba(242, 204, 15, 0.05);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -9,6 +69,11 @@ body {
 
 .active-link.nav-hover::after {
   width: 100%;
+}
+
+.nav-hover:hover,
+.nav-hover.active-link {
+  color: var(--text-primary);
 }
 
 .nav-hover::after {
@@ -29,6 +94,49 @@ body {
   display: none;
 }
 
+/* btns */
+
+.btn-primary {
+  background: var(--gold);
+  color: #0d0d0d;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border-radius: 2px;
+  transition:
+    box-shadow 0.3s,
+    transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+}
+.btn-primary:hover {
+  box-shadow:
+    0 0 28px rgba(242, 204, 15, 0.4),
+    0 0 60px rgba(242, 204, 15, 0.1);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.7rem 2rem;
+  border: 1px solid rgba(242, 204, 15, 0.5);
+  border-radius: 2px;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-outline:hover {
+  background: var(--gold-dim);
+  border-color: var(--gold);
+  transform: translateY(-1px);
+}
+
 .btn-hover:hover {
   box-shadow: 0 0 20px rgba(242, 204, 15, 0.5);
   cursor: pointer;
@@ -36,6 +144,32 @@ body {
 
 .my-border:hover {
   border-color: #f2cc0f;
+}
+
+/* Inputs */
+.field-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--text-primary);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.88rem;
+  outline: none;
+  transition:
+    border-color 0.25s,
+    background 0.25s;
+}
+.field-input::placeholder {
+  color: var(--text-muted);
+}
+.field-input:focus {
+  border-color: rgba(242, 204, 15, 0.5);
+  background: rgba(242, 204, 15, 0.02);
+}
+.field-input option {
+  background: #161616;
 }
 
 .head {

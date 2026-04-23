@@ -75,16 +75,18 @@ export default function Portfolio() {
     <section
       id="portfolio"
       aria-label="Portfolio — React, WordPress & Shopify Projects by Abdul Rehman"
-      className="2xl:px-30 py-20 px-3 md:px-20 bg-[#1a1a1a80] 2xl:place-items-center"
+      className="2xl:px-30 py-20 px-3 md:px-20 bg-(--bg-surface) 2xl:place-items-center"
     >
-      <div className="text-center mb-10">
-        <h2 className="text-4xl text-white font-bold mb-4">
+      <div className="text-center mb-14">
+        <div className="section-label justify-center mb-4">My Work</div>
+        <h2
+          className="font-display"
+          style={{ fontSize: "clamp(2.2rem, 5vw, 3.5rem)", fontWeight: 300 }}
+        >
           Portfolio & Recent Work
         </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto">
-          A selection of React web app development, WordPress website
-          development, Shopify store development, and UI/UX design projects by
-          Abdul Rehman — freelance front-end developer in Karachi, Pakistan.
+        <p className="mt-4 text-(--text-secondary) max-w-xl mx-auto text-sm leading-relaxed">
+          A selection of React, WordPress, Shopify, and UI/UX design projects.
         </p>
       </div>
 
@@ -120,13 +122,13 @@ export default function Portfolio() {
                   alt={`${p.title} — ${p.category} by Abdul Rehman, front-end developer Karachi`}
                   className="w-full sm:h-120 object-cover hover:scale-105 transition"
                 />
-                <h3 className="text-white text-xl mt-4 text-center hover:text-[#f2cc0f]">
+                <h3 className="font-display text-xl  mt-4 text-center hover:text-(--gold)">
                   {p.title}
                 </h3>
-                <p className="text-[#f2cc0f] text-sm font-medium text-center mt-1">
+                <p className="text-(--gold) text-sm font-medium text-center mt-1">
                   {p.category}
                 </p>
-                <p className="text-gray-400 text-sm text-center mt-1 px-2">
+                <p className="text-(--text-secondary) text-sm text-center mt-1 px-2">
                   {p.description}
                 </p>
               </a>

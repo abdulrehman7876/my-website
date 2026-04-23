@@ -43,7 +43,7 @@ export default function Header({ navActive, setNavActive }) {
     <header
       role="banner"
       aria-label="Abdul Rehman — Freelance Front-End Developer in Karachi"
-      className={`h-18 w-full 2xl:justify-center 2xl:gap-70 sticky backdrop-blur-sm flex justify-between items-center px-3 md:px-20 border-b border-b-gray-700/50 z-50 ${isBlurred ? "bg-[#161616]/90 top-0" : "bg-[#161616] 2xl:px-30"}`}
+      className={`h-18 w-full 2xl:justify-center 2xl:gap-70 sticky backdrop-blur-sm flex justify-between items-center px-3 md:px-20 border-b border-b-gray-800/30 z-50 ${isBlurred ? "bg-[rgba(13,13,13,0.9)] top-0" : "bg-[rgba(13,13,13,0.92)] 2xl:px-30"}`}
     >
       {/* Mobile menu toggle */}
       <button
@@ -76,9 +76,9 @@ export default function Header({ navActive, setNavActive }) {
       <nav
         role="navigation"
         aria-label="Main navigation"
-        className="font-semibold h-18 w-3xl hidden md:flex justify-center items-center text-white"
+        className="font-normal h-18 w-3xl text-xs hidden md:flex justify-center items-center text-(--text-secondary)"
       >
-        <ul className="flex space-x-8 items-center justify-center h-18">
+        <ul className="flex space-x-8 items-center justify-center h-18 uppercase">
           {nav.map((item, index) => (
             <li
               key={index}
@@ -147,7 +147,7 @@ export default function Header({ navActive, setNavActive }) {
         href="/AbdulRehmanCv.pdf"
         download="Abdul-Rehman-Frontend-Developer-CV.pdf"
         aria-label="Download Abdul Rehman's front-end developer resume"
-        className="bg-[#f2cc0f] rounded-lg px-3 md:px-6 py-1 pb-1.5 sm:pb-2 text-black font-semibold btn-hover transition-all duration-300"
+        className="btn-primary uppercase transition-all duration-300"
       >
         Resume
       </a>

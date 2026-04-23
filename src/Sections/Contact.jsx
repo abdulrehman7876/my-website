@@ -4,14 +4,12 @@ import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const form = useRef();
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     service: "",
     message: "",
   });
-
   const [invalid, setInvalid] = useState({
     name: false,
     email: false,
@@ -39,118 +37,126 @@ export default function Contact() {
       );
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+
+  const contactInfo = [
+    {
+      icon: <MapPin size={18} />,
+      label: "Location",
+      value: "Karachi, Pakistan",
+      sub: "Available for remote projects worldwide",
+    },
+    {
+      icon: <Mail size={18} />,
+      label: "Email",
+      value: "a.rehmanaijaz@gmail.com",
+      href: "mailto:a.rehmanaijaz@gmail.com",
+    },
+    {
+      icon: <Phone size={18} />,
+      label: "Phone",
+      value: "+92 306 2617692",
+      href: "tel:+923062617692",
+    },
+  ];
 
   return (
     <section
       id="contact"
-      aria-label="Contact Abdul Rehman — Hire a Freelance Front-End Developer in Karachi"
-      className="py-20 md:px-20 px-1 2xl:px-30"
-      style={{ backgroundColor: "#212121" }}
+      aria-label="Contact Abdul Rehman"
+      className="py-28 px-5 md:px-16"
+      style={{ background: "var(--bg-base)" }}
     >
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center text-white mb-4">
-          Hire a Front-End Developer in Karachi
-        </h2>
-        <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-          Looking to hire a React JS developer, WordPress developer, or Shopify
-          developer in Pakistan? Let's discuss your project and build something
-          great together.
-        </p>
+      <div className="container mx-auto max-w-6xl">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="section-label justify-center mb-4">Get In Touch</div>
+          <h2
+            className="font-display"
+            style={{ fontSize: "clamp(2.2rem, 5vw, 3.5rem)", fontWeight: 300 }}
+          >
+            Hire a Front-End Developer
+          </h2>
+          <p className="mt-4 text-[var(--text-secondary)] max-w-xl mx-auto text-sm leading-relaxed">
+            Looking for a React, WordPress, or Shopify developer in Pakistan?
+            Let's discuss your project.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
-          <div className="p-8 rounded-lg border transition-all my-border bg-[rgba(26,26,26,0.8)] border-[#3a3a3a]">
-            <form ref={form} onSubmit={sendEmail} className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-gray-300 font-medium mb-2"
-                >
-                  Your Name
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="peer w-full px-4 py-3 rounded-lg text-white transition outline-none bg-[#212121] border-[#3a3a3a] border"
-                  placeholder="Your full name"
-                  onFocus={(e) => (e.target.style.borderColor = "#F2CC0F")}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = "#3a3a3a";
-                    setInvalid((prev) => ({
-                      ...prev,
-                      name: formData.name === "",
-                    }));
-                  }}
-                />
-                <p
-                  className={`mt-1 text-sm text-red-500 ${invalid.name ? "block" : "hidden"}`}
-                >
-                  This field is required
-                </p>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-gray-300 font-medium mb-2"
-                >
-                  Your Email
-                </label>
-                <input
-                  id="email"
-                  required
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="peer w-full px-4 py-3 rounded-lg text-white transition outline-none bg-[#212121] border-[#3a3a3a] border"
-                  placeholder="xyz@gmail.com"
-                  onFocus={(e) => (e.target.style.borderColor = "#F2CC0F")}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = "#3a3a3a";
-                    setInvalid((prev) => ({
-                      ...prev,
-                      email: formData.email === "",
-                    }));
-                  }}
-                />
-                <p
-                  className={`mt-1 text-sm text-red-500 ${invalid.email ? "block" : "hidden"}`}
-                >
-                  This field is required
-                </p>
-              </div>
+        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+          {/* Form */}
+          <div className="card p-8">
+            <form ref={form} onSubmit={sendEmail} className="space-y-5">
+              {[
+                {
+                  id: "name",
+                  label: "Your Name",
+                  type: "text",
+                  placeholder: "Full name",
+                  key: "name",
+                },
+                {
+                  id: "email",
+                  label: "Email Address",
+                  type: "email",
+                  placeholder: "you@example.com",
+                  key: "email",
+                },
+              ].map(({ id, label, type, placeholder, key }) => (
+                <div key={id}>
+                  <label
+                    htmlFor={id}
+                    className="block text-xs font-mono-custom tracking-widest uppercase mb-2"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
+                    {label}
+                  </label>
+                  <input
+                    id={id}
+                    type={type}
+                    name={id}
+                    required
+                    value={formData[key]}
+                    onChange={handleChange}
+                    placeholder={placeholder}
+                    className="field-input"
+                    onBlur={(e) =>
+                      setInvalid((prev) => ({
+                        ...prev,
+                        [key]: formData[key] === "",
+                      }))
+                    }
+                  />
+                  {invalid[key] && (
+                    <p className="mt-1 text-xs" style={{ color: "#e05a5a" }}>
+                      This field is required
+                    </p>
+                  )}
+                </div>
+              ))}
 
               <div>
                 <label
                   htmlFor="service"
-                  className="block text-gray-300 font-medium mb-2"
+                  className="block text-xs font-mono-custom tracking-widest uppercase mb-2"
+                  style={{ color: "var(--text-secondary)" }}
                 >
-                  Service You Need
+                  Service Needed
                 </label>
                 <select
-                  required
                   id="service"
                   name="service"
-                  aria-required="true"
+                  required
                   value={formData.service}
                   onChange={handleChange}
-                  className="peer w-full px-4 py-3 rounded-lg text-white transition outline-none duration-100 ease bg-[#212121] border-[#3a3a3a] border"
-                  onFocus={(e) => (e.target.style.borderColor = "#F2CC0F")}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = "#3a3a3a";
+                  className="field-input"
+                  onBlur={() =>
                     setInvalid((prev) => ({
                       ...prev,
                       service: formData.service === "",
-                    }));
-                  }}
+                    }))
+                  }
                 >
                   <option value="">Select a service</option>
                   <option value="react-web-app-development">
@@ -165,48 +171,46 @@ export default function Contact() {
                   <option value="ui-ux-design">UI/UX Design</option>
                   <option value="graphic-design">Graphic Design</option>
                 </select>
-                <p
-                  className={`mt-1 text-sm text-red-500 ${invalid.service ? "block" : "hidden"}`}
-                >
-                  This field is required
-                </p>
+                {invalid.service && (
+                  <p className="mt-1 text-xs" style={{ color: "#e05a5a" }}>
+                    This field is required
+                  </p>
+                )}
               </div>
 
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-gray-300 font-medium mb-2"
+                  className="block text-xs font-mono-custom tracking-widest uppercase mb-2"
+                  style={{ color: "var(--text-secondary)" }}
                 >
                   Project Details
                 </label>
                 <textarea
                   id="message"
                   name="message"
+                  rows="4"
                   value={formData.message}
                   onChange={handleChange}
-                  rows="4"
-                  className="w-full px-4 py-3 rounded-lg text-white transition outline-none resize-none bg-[#212121] border-[#3a3a3a] border"
-                  placeholder="Describe your project — e.g. React web app, WordPress site, Shopify store..."
-                  onFocus={(e) => (e.target.style.borderColor = "#F2CC0F")}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = "#3a3a3a";
+                  placeholder="Tell me about your project..."
+                  className="field-input resize-none"
+                  onBlur={() =>
                     setInvalid((prev) => ({
                       ...prev,
                       message: formData.message === "",
-                    }));
-                  }}
-                ></textarea>
-                <p
-                  className={`mt-1 text-sm text-red-500 ${invalid.message ? "block" : "hidden"}`}
-                >
-                  This field is required
-                </p>
+                    }))
+                  }
+                />
+                {invalid.message && (
+                  <p className="mt-1 text-xs" style={{ color: "#e05a5a" }}>
+                    This field is required
+                  </p>
+                )}
               </div>
 
               <button
-                aria-label="Send message to hire Abdul Rehman"
                 type="submit"
-                className="w-full text-black py-3 rounded-lg transition-all font-medium bg-[#F2CC0F] btn-hover"
+                className="btn-primary w-full justify-center cursor-pointer"
               >
                 Send Message
               </button>
@@ -214,79 +218,91 @@ export default function Contact() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="p-8 rounded-lg border transition-all my-border bg-[rgba(26,26,26,0.8)] border-[#3a3a3a]">
-              <h3 className="text-2xl font-semibold text-white mb-6">
+          <div className="flex flex-col gap-6">
+            <div className="card p-8">
+              <h3
+                className="font-display mb-7"
+                style={{ fontSize: "1.4rem", fontWeight: 400 }}
+              >
                 Contact Information
               </h3>
-
-              <div className="space-y-10">
-                <div className="flex items-start gap-4 transition-transform">
-                  <div
-                    className="p-3 rounded-lg transition"
-                    style={{ backgroundColor: "rgba(242, 204, 15, 0.2)" }}
-                  >
-                    <MapPin style={{ color: "#F2CC0F" }} size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">Location</h4>
-                    <p className="text-gray-400">Karachi, Pakistan</p>
-                    <p className="text-gray-500 text-sm mt-1">
-                      Available for remote projects worldwide
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 transition-transform">
-                  <div
-                    className="p-3 rounded-lg transition"
-                    style={{ backgroundColor: "rgba(242, 204, 15, 0.2)" }}
-                  >
-                    <Mail style={{ color: "#F2CC0F" }} size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">Email</h4>
-                    <a
-                      aria-label="Send email to Abdul Rehman"
-                      href="mailto:a.rehmanaijaz@gmail.com"
-                      className="text-gray-400 hover:text-[#F2CC0F] transition"
+              <div className="space-y-7">
+                {contactInfo.map((item, i) => (
+                  <div key={i} className="flex gap-4 items-start group">
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300"
+                      style={{
+                        background: "rgba(242,204,15,0.08)",
+                        color: "var(--gold)",
+                        border: "1px solid rgba(242,204,15,0.15)",
+                      }}
                     >
-                      a.rehmanaijaz@gmail.com
-                    </a>
+                      {item.icon}
+                    </div>
+                    <div>
+                      <p
+                        className="font-mono-custom text-[0.6rem] tracking-widest uppercase mb-1"
+                        style={{ color: "var(--text-muted)" }}
+                      >
+                        {item.label}
+                      </p>
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          className="text-sm transition-colors duration-200"
+                          style={{ color: "var(--text-secondary)" }}
+                          onMouseEnter={(e) =>
+                            (e.currentTarget.style.color = "var(--gold)")
+                          }
+                          onMouseLeave={(e) =>
+                            (e.currentTarget.style.color =
+                              "var(--text-secondary)")
+                          }
+                        >
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p
+                          className="text-sm"
+                          style={{ color: "var(--text-secondary)" }}
+                        >
+                          {item.value}
+                        </p>
+                      )}
+                      {item.sub && (
+                        <p
+                          className="text-xs mt-0.5"
+                          style={{ color: "var(--text-muted)" }}
+                        >
+                          {item.sub}
+                        </p>
+                      )}
+                    </div>
                   </div>
-                </div>
-
-                <div className="flex items-start gap-4 transition-transform">
-                  <div
-                    className="p-3 rounded-lg transition"
-                    style={{ backgroundColor: "rgba(242, 204, 15, 0.2)" }}
-                  >
-                    <Phone style={{ color: "#F2CC0F" }} size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">Phone</h4>
-                    <a
-                      href="tel:+923062617692"
-                      aria-label="Call Abdul Rehman"
-                      className="text-gray-400 hover:text-[#F2CC0F] transition"
-                    >
-                      +92 306 2617692
-                    </a>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
-            <div className="p-8 rounded-lg shadow-lg transition-transform text-black bg-[#F2CC0F]">
-              <h3 className="text-2xl font-semibold mb-4">
+            <div
+              className="p-8 rounded-sm flex-1"
+              style={{
+                background: "var(--gold)",
+                color: "#0d0d0d",
+              }}
+            >
+              <h3
+                className="font-display mb-3"
+                style={{ fontSize: "1.4rem", fontWeight: 600 }}
+              >
                 Let's Build Something Great
               </h3>
-              <p className="leading-relaxed">
+              <p
+                className="text-sm leading-relaxed"
+                style={{ color: "rgba(13,13,13,0.7)" }}
+              >
                 Looking to hire a React JS developer, WordPress developer, or
-                Shopify developer in Karachi? I provide custom React web app
-                development, WordPress website development, Shopify store
-                development, and responsive web design services for businesses
-                across Pakistan and worldwide.
+                Shopify developer in Karachi? I provide custom web solutions for
+                businesses across Pakistan and worldwide.
               </p>
             </div>
           </div>

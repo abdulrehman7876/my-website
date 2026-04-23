@@ -4,15 +4,34 @@ export default function Home() {
     <section
       role="main"
       id="home"
-      className="pb-20 w-full bg-[#212121] px-3 md:px-20 relative 2xl:px-30 overflow-hidden"
+      className="pb-20 w-full px-3 md:px-20 relative 2xl:px-30 overflow-hidden"
+      style={{ background: "var(--bg-base)" }}
     >
+      {/* Ambient glow */}
       <div
-        className="h-full absolute inset-0 mouse-events-none pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle at top right, rgba(242, 204, 15, 0.1), transparent 50%)",
+            "radial-gradient(ellipse 70% 60% at center, rgba(242,204,15,0.055) 0%, transparent 70%)",
         }}
-      ></div>
+      />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 40% 50% at center, rgba(242,204,15,0.025) 0%, transparent 60%)",
+        }}
+      />
+
+      {/* Grid overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        style={{
+          backgroundImage:
+            "linear-gradient(var(--text-primary) 1px, transparent 1px), linear-gradient(90deg, var(--text-primary) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
       <div className="container mx-auto relative">
         <div className="w-auto pt-5 -right-20 lg:right-0 absolute inset-0 pointer-events-none mouse-events-none hidden sm:flex justify-end -bottom-100">
           <img
@@ -27,21 +46,35 @@ export default function Home() {
           <h1 className="text-4xl md:text-5xl font-bold text-white">
             I'm <span className="text-[#F2CC0F]">Abdul Rehman</span>
           </h1>
-          <h2 className="text-2xl md:text-4xl font-semibold inline-block text-white transition hover:text-[#F2CC0F] duration-300 mt-2 md:mt-4">
+          <h2 className="font-display text-2xl md:text-4xl font-semibold inline-block text-white transition hover:text-[#F2CC0F] duration-300 mt-2 md:mt-4">
             Freelance Front-End Developer
           </h2>
-          <p className="text-white md:text-lg leading-relaxed mt-3 md:mt-4 sm:w-1/2">
+          <p className="text-(--text-secondary) md:text-lg leading-relaxed mt-3 md:mt-4 sm:w-1/2">
             I'm a React JS developer available for hire, specializing in custom
             React web app development, WordPress website development, and
             Shopify store development. Based in Karachi, I build fast,
             responsive, and SEO-friendly web solutions for businesses across
             Pakistan and worldwide.
           </p>
-          <ul className="text-[#F2CC0F] text-sm md:text-base mt-4 sm:w-1/2 flex flex-wrap gap-x-4 gap-y-1 list-none">
-            <li>⚡ React Web Apps</li>
-            <li>🛒 Shopify Store Development</li>
-            <li>🌐 WordPress Websites</li>
-            <li>📱 Responsive Web Design</li>
+          <ul className="flex flex-wrap gap-2 mt-5 anim-fadeUp anim-delay-3">
+            {[
+              "React Web Apps",
+              "Shopify",
+              "WordPress",
+              "Responsive Design",
+            ].map((tag, i) => (
+              <li
+                key={i}
+                className="font-mono-custom text-[0.6rem] tracking-widest uppercase px-3 py-1 border"
+                style={{
+                  borderColor: "rgba(242,204,15,0.2)",
+                  color: "var(--gold)",
+                  borderRadius: "1px",
+                }}
+              >
+                {tag}
+              </li>
+            ))}
           </ul>
           <div className="flex gap-4 mt-8">
             <button

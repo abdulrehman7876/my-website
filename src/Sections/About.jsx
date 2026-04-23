@@ -58,21 +58,28 @@ export default function About() {
       id="about"
       aria-label="About Abdul Rehman — Freelance Front-End Developer in Karachi"
       ref={sectionRef}
-      className="w-full bg-[#1c1c1c] px-3 md:px-20 relative 2xl:px-auto"
+      className="w-full px-3 md:px-20 relative 2xl:px-auto"
+      style={{ background: "var(--bg-surface)" }}
     >
       <div className="container mx-auto py-20">
-        <h2 className="text-4xl font-bold text-center text-white mb-4">
-          About Me
-        </h2>
-        <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-          Freelance front-end developer in Karachi, Pakistan — specializing in
-          React web app development, WordPress, and Shopify store development.
-        </p>
+        <div className="text-center mb-16">
+          <div className="section-label justify-center mb-4">About Me</div>
+          <h2
+            className="font-display text-white"
+            style={{ fontSize: "clamp(2.2rem, 5vw, 3.5rem)", fontWeight: 300 }}
+          >
+            Crafting Digital Experiences
+          </h2>
+          <p className="mt-4 text-[var(--text-secondary)] max-w-xl mx-auto text-sm leading-relaxed">
+            Freelance front-end developer in Karachi — specializing in React,
+            WordPress, and Shopify.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-10">
           {/* Skills */}
           <div
-            className="p-8 rounded-lg border transition-all hover:scale-105"
+            className="p-8 rounded-lg border transition-all"
             style={{
               backgroundColor: "rgba(33, 33, 33, 0.5)",
               borderColor: "#3a3a3a",
@@ -87,19 +94,19 @@ export default function About() {
             <h3 className="text-2xl font-semibold text-white mb-6">
               Technical Skills
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-7">
               {skills.map((skill, index) => (
                 <div key={index}>
                   <div className="flex justify-between mb-2">
-                    <span className="text-gray-300 font-medium">
+                    <span className="text-(--text-secondary) font-normal text-sm">
                       {skill.name}
                     </span>
-                    <span className="font-medium text-[#F2CC0F] transition-all duration-1000 ease-in">
+                    <span className="font-light text-sm text-[#F2CC0F] transition-all duration-1000 ease-in">
                       {isVisible ? skill.level : 0}%
                     </span>
                   </div>
                   <div
-                    className="w-full bg-gray-700 rounded-full h-2 overflow-hidden"
+                    className="w-full bg-gray-700 rounded-full h-1 overflow-hidden"
                     role="progressbar"
                     aria-valuenow={isVisible ? skill.level : 0}
                     aria-valuemin={0}
@@ -107,7 +114,7 @@ export default function About() {
                     aria-label={`${skill.name} proficiency`}
                   >
                     <div
-                      className="h-2 rounded-full transition-all duration-1000 ease-in"
+                      className="h-1 rounded-full transition-all duration-1000 ease-in"
                       style={{
                         width: isVisible ? `${skill.level}%` : "0%",
                         backgroundColor: "#F2CC0F",
@@ -120,7 +127,7 @@ export default function About() {
           </div>
 
           {/* What I Do */}
-          <div className="p-8 rounded-lg bg-[rgba(33,33,33,0.5)] border border-[#3a3a3a] transition-all hover:scale-105 hover:border-[#F2CC0F]">
+          <div className="p-8 rounded-lg bg-[rgba(33,33,33,0.5)] border border-[#3a3a3a] transition-all hover:border-[#F2CC0F]">
             <h3 className="text-2xl font-semibold text-white mb-4">
               What I Do
             </h3>
