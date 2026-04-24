@@ -17,7 +17,7 @@ export default function Services() {
         "Professional WordPress theme customization and Shopify store development tailored for businesses in Karachi and across Pakistan.",
       icon: (
         <img
-          className="h-full myanimation"
+          className="h-full myanimation custom-anim"
           src={UiUx}
           alt="WordPress and Shopify services"
         />
@@ -83,7 +83,7 @@ export default function Services() {
                 {service.title}
               </h3>
 
-              <p className="text-[var(--text-secondary)] text-sm leading-relaxed flex-1">
+              <p className="text-(--text-secondary) text-sm leading-relaxed flex-1">
                 {service.description}
               </p>
 
