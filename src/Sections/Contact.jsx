@@ -37,6 +37,25 @@ export default function Contact() {
       );
   };
 
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    setFormData((prev) => ({
+      ...prev,
+      name: prev.name.trim(),
+      email: prev.email.trim(),
+    }));
+
+    // validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setInvalid((prev) => ({ ...prev, email: true }));
+      return;
+    }
+    setInvalid((prev) => ({ ...prev, email: false }));
+    alert("Submitting your message...");
+    sendEmail(e);
+  };
+
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -87,7 +106,7 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
           {/* Form */}
           <div className="card p-8">
-            <form ref={form} onSubmit={sendEmail} className="space-y-5">
+            <form ref={form} onSubmit={handleOnSubmit} className="space-y-5">
               {[
                 {
                   id: "name",
