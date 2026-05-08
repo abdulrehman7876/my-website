@@ -76,25 +76,24 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <div className="flex gap-4 mt-8">
-            <button
-              aria-label="Get in Touch"
-              className="text-black px-4 py-2 sm:px-8 sm:py-3 rounded-lg transition-all hover:scale-105 font-medium border-2 border-amber-300 pb-2.5 btn-hover bg-[#F2CC0F]"
+          <div className="flex gap-5 mt-8">
+            <a
+              href="#contact"
+              aria-label="Go to contact section"
+              className="min-h-12 flex items-center justify-center text-black text-lg px-6 py-3 rounded-lg transition-all hover:scale-105 font-medium border-2 border-amber-300 bg-[#F2CC0F]"
             >
-              <a aria-label="Go to contact section" href="#contact">
-                Hire Me
-              </a>
-            </button>
-            <button
-              aria-label="View Work"
-              className="px-4 py-2 sm:px-8 sm:py-3 rounded-lg hover:scale-105 transition-all font-medium hover:bg-[rgba(242,204,15,0.1)] cursor-pointer"
-              style={{ border: "2px solid #F2CC0F", color: "#F2CC0F" }}
+              Hire Me
+            </a>
+
+            <a
+              href="#portfolio"
+              aria-label="Go to portfolio section"
+              className="min-h-12 flex items-center justify-center px-6 py-3 rounded-lg hover:scale-105 transition-all font-medium hover:bg-[rgba(242,204,15,0.1)] text-lg border-2 border-[#F2CC0F] text-[#F2CC0F]"
             >
-              <a aria-label="Go to services section" href="#portfolio">
-                View Work
-              </a>
-            </button>
+              View Work
+            </a>
           </div>
+
           <div className="flex gap-5 pt-10 text-3xl justify-center sm:justify-start">
             <button
               aria-label="Github"

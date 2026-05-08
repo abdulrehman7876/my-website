@@ -94,6 +94,7 @@ export default function Portfolio() {
         <button
           onClick={() => sliderRef.current.slickPrev()}
           aria-label="Previous project"
+          aria-hidden="false"
           className="absolute left-5 md:left-0 top-1/3 z-10 bg-black/50 hover:text-black text-[#f2cc0f] hover:bg-[#f2cc0f] border-2 border-[#f2cc0f] rounded-full p-2 text-3xl cursor-pointer transition"
         >
           <RiArrowLeftSLine />
@@ -102,17 +103,26 @@ export default function Portfolio() {
         <button
           onClick={() => sliderRef.current.slickNext()}
           aria-label="Next project"
+          aria-hidden="false"
           className="absolute right-5 md:right-0 top-1/3 z-10 bg-black/50 md:bg-none hover:text-black text-[#f2cc0f] hover:bg-[#f2cc0f] border-2 border-[#f2cc0f] rounded-full p-2 text-3xl cursor-pointer transition"
         >
           <RiArrowRightSLine />
         </button>
 
-        <Slider ref={sliderRef} {...settings} className="2xl:max-w-[1536px]">
+        <Slider
+          ref={sliderRef}
+          {...settings}
+          className="2xl:max-w-[1536px]"
+          aria-hidden="false"
+          aria-label="Project carousel showcasing Abdul Rehman's portfolio of React, WordPress, Shopify, and UI/UX design projects"
+          role="region"
+        >
           {projects.map((p, i) => (
             <div key={i} className="px-2 md:px-4 text-center">
               <a
                 href={p.link || "#portfolio"}
                 aria-label={`View project: ${p.title} — ${p.category}`}
+                aria-hidden="false"
                 target={p.link ? "_blank" : "_self"}
                 rel="noopener noreferrer"
               >

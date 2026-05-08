@@ -70,7 +70,7 @@ export default function About() {
           >
             Crafting Digital Experiences
           </h2>
-          <p className="mt-4 text-[var(--text-secondary)] max-w-xl mx-auto text-sm leading-relaxed">
+          <p className="mt-4 text-(--text-secondary) max-w-xl mx-auto text-sm leading-relaxed">
             Freelance front-end developer in Karachi — specializing in React,
             WordPress, and Shopify.
           </p>
@@ -128,17 +128,17 @@ export default function About() {
 
           {/* What I Do */}
           <div className="p-8 rounded-lg bg-[rgba(33,33,33,0.5)] border border-[#3a3a3a] transition-all hover:border-[#F2CC0F]">
-            <h3 className="text-2xl font-semibold text-white mb-4">
+            <h3 className="text-2xl font-semibold text-(--text-primary) mb-4">
               What I Do
             </h3>
-            <p className="text-gray-400 leading-relaxed mb-4">
+            <p className="text-(--text-secondary) leading-relaxed mb-4">
               I'm a freelance front-end developer based in Karachi, Pakistan,
               available for hire for React web app development, custom WordPress
               website development, and Shopify store development. I build fast,
               responsive, and SEO-friendly web solutions for businesses across
               Pakistan and worldwide.
             </p>
-            <p className="text-gray-400 leading-relaxed mb-6">
+            <p className="text-(--text-secondary) leading-relaxed mb-6">
               Whether you need a custom React application, WordPress theme
               customization, or a high-converting Shopify storefront, I focus on
               clean code, performance, and delivering results that grow your
@@ -151,10 +151,10 @@ export default function About() {
                 <li key={index} className="flex gap-3 items-start">
                   <span className="text-[#F2CC0F] mt-1 text-sm">▸</span>
                   <div>
-                    <span className="text-white font-medium text-sm">
+                    <span className="text-(--text-primary) font-medium text-sm">
                       {service.title}
                     </span>
-                    <p className="text-gray-500 text-sm leading-snug">
+                    <p className="text-(--text-secondary) text-sm leading-snug">
                       {service.desc}
                     </p>
                   </div>

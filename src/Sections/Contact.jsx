@@ -97,7 +97,7 @@ export default function Contact() {
           >
             Hire a Front-End Developer
           </h2>
-          <p className="mt-4 text-[var(--text-secondary)] max-w-xl mx-auto text-sm leading-relaxed">
+          <p className="mt-4 text-(--text-secondary) max-w-xl mx-auto text-sm leading-relaxed">
             Looking for a React, WordPress, or Shopify developer in Pakistan?
             Let's discuss your project.
           </p>
@@ -140,7 +140,7 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder={placeholder}
                     className="field-input"
-                    onBlur={(e) =>
+                    onBlur={() =>
                       setInvalid((prev) => ({
                         ...prev,
                         [key]: formData[key] === "",
@@ -249,7 +249,7 @@ export default function Contact() {
                 {contactInfo.map((item, i) => (
                   <div key={i} className="flex gap-4 items-start group">
                     <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300"
+                      className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300"
                       style={{
                         background: "rgba(242,204,15,0.08)",
                         color: "var(--gold)",
