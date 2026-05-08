@@ -261,7 +261,7 @@ export default function Contact() {
                     <div>
                       <p
                         className="font-mono-custom text-[0.6rem] tracking-widest uppercase mb-1"
-                        style={{ color: "var(--text-muted)" }}
+                        style={{ color: "var(--text-primary)" }}
                       >
                         {item.label}
                       </p>
@@ -291,7 +291,7 @@ export default function Contact() {
                       {item.sub && (
                         <p
                           className="text-xs mt-0.5"
-                          style={{ color: "var(--text-muted)" }}
+                          style={{ color: "var(--text-secondary)" }}
                         >
                           {item.sub}
                         </p>

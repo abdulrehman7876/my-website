@@ -63,7 +63,7 @@ export default function Services() {
               <div
                 className="font-mono-custom text-[2.5rem] font-bold leading-none"
                 style={{
-                  color: "rgba(242,204,15,0.1)",
+                  color: "var(--text-secondary)",
                   letterSpacing: "-0.02em",
                 }}
               >
