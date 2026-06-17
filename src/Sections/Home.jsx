@@ -25,7 +25,7 @@ export default function Home() {
 
       {/* Grid overlay */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        className="absolute inset-0 pointer-events-none opacity-[0.045]"
         style={{
           backgroundImage:
             "linear-gradient(var(--text-primary) 1px, transparent 1px), linear-gradient(90deg, var(--text-primary) 1px, transparent 1px)",
@@ -50,7 +50,8 @@ export default function Home() {
             Freelance Front-End Developer
           </h2>
           <p className="text-(--text-secondary) md:text-lg leading-relaxed mt-3 md:mt-4 sm:w-1/2">
-            I'm a React JS developer available for hire, specializing in custom
+            I'm a Shopify store developer, React developer, WordPress developer,
+            and website designer available for hire. I specialize in custom
             React web app development, WordPress website development, and
             Shopify store development. Based in Karachi, I build fast,
             responsive, and SEO-friendly web solutions for businesses across

@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer
       role="contentinfo"
-      className="px-5 md:px-16 pt-16 pb-8"
+      className=" px-3 md:px-20 2xl:px-30 pt-16 pb-8"
       style={{
         background: "#080808",
         borderTop: "1px solid rgba(255,255,255,0.05)",

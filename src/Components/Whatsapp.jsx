@@ -7,9 +7,9 @@ const Whatsapp = () => {
       target="_blank"
       aria-label="Contact me on Whatsapp"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full shadow-xl hover:scale-110 transition z-52"
+      className="fixed bottom-6 right-6 bg-(--gold) p-4 rounded-full shadow-xl hover:scale-110 transition z-52 custom-animate"
     >
-      <FaWhatsapp size={28} color="white" />
+      <FaWhatsapp size={28} color="black" />
     </a>
   );
 };

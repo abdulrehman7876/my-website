@@ -7,15 +7,19 @@ import "slick-carousel/slick/slick-theme.css";
 export default function Portfolio() {
   const sliderRef = useRef(null);
   const [slidesToShow, setSlidesToShow] = useState(3);
+  const [dots, setDots] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 480) {
         setSlidesToShow(1);
+        setDots(true);
       } else if (window.innerWidth < 1024) {
         setSlidesToShow(2);
+        setDots(false);
       } else {
         setSlidesToShow(3);
+        setDots(false);
       }
     };
 
@@ -69,6 +73,7 @@ export default function Portfolio() {
     cssEase: "linear",
     arrows: false,
     pauseOnHover: true,
+    dots: dots,
   };
 
   return (

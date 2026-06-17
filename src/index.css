@@ -9,8 +9,8 @@
   --bg-card: #161616;
   --border: rgba(255, 255, 255, 0.07);
   --text-primary: #ede9e0;
-  --text-secondary: #b1ada9;
-  --text-muted: #747270;
+  --text-secondary: #cbc6c1;
+  --text-muted: #8f8c89;
 }
 
 body {
@@ -170,6 +170,37 @@ body {
 }
 .field-input option {
   background: #161616;
+}
+/* whatsapp btn animation */
+.custom-animate {
+  animation: clickme 2s ease-in-out infinite;
+}
+@keyframes clickme {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(242, 204, 15, 0.7);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(242, 204, 15, 0.7);
+  }
+}
+
+/* Change color and size of all dots (inactive) */
+.slick-dots li button:before {
+  font-size: 12px !important; /* Increase size (default is 6px) */
+  color: var(--text-primary) !important; /* Set your inactive color */
+  opacity: 1;
+  transition: all 0.5s linear;
+}
+
+/* Change color and size of the active slide dot */
+.slick-dots li.slick-active button:before {
+  font-size: 17px !important; /* Make active dot slightly larger if desired */
+  color: var(--gold) !important; /* Set your active color */
+  opacity: 1;
+  transition: all 0.5s linear;
 }
 
 .head {
