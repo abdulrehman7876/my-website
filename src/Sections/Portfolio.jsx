@@ -33,12 +33,20 @@ export default function Portfolio() {
       title: "E-Commerce React Web App",
       category: "React Web App Development",
       description:
-        "A custom React.js e-commerce platform clone featuring product listings, cart functionality, and responsive design.",
-      image: "/E-commerceClone.webp",
-      link: "https://amazonecloneecommerce.netlify.app/",
+        "A custom React.js e-commerce platform featuring product listings, cart functionality, authentication, and responsive design.",
+      image: "/luxe.webp",
+      link: "https://luxe-ecommrse-store.vercel.app/",
     },
     {
-      title: "Cafe Website UI/UX Design",
+      title: "Cafe Website Development",
+      category: "Html, CSS & JavaScript",
+      description:
+        "Modern café website showcasing menu, location, and contact information with a focus on responsive design and user experience.",
+      image: "/corticafe.webp",
+      link: "https://corticafe.netlify.app/",
+    },
+    {
+      title: "Cafe Landing Page UI/UX Design",
       category: "UI/UX & Responsive Web Design",
       description:
         "Modern café website with a focus on UI/UX design, mobile-first layout, and smooth user experience.",
