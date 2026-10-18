@@ -39,7 +39,7 @@ export default function Home() {
             src="/Mypic.webp"
             alt="Abdul Rehman — Freelance Front-End Developer in Karachi, Pakistan"
             loading="eager"
-            fetchpriority="high"
+            fetchPriority="high"
           />
         </div>
         <div className="relative container mx-auto flex-1 pt-12">

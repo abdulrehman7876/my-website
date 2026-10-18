@@ -1,5 +1,6 @@
+import SlickModule from "react-slick";
 import { useRef, useState, useEffect } from "react";
-import Slider from "react-slick";
+const Slider = SlickModule.default || SlickModule;
 import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
