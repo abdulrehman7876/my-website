@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Check, CircleAlert, LoaderCircle, X } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const form = useRef();
+  const [popup, setPopup] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,24 +19,36 @@ export default function Contact() {
     message: false,
   });
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_hkoy1yw",
-        "template_h903new",
+  const sendEmail = async () => {
+    setIsSubmitting(true);
+    setPopup({
+      status: "sending",
+      title: "Sending your message",
+      message: "Please wait while your message is on its way.",
+    });
+
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        "O-td-qvqRQ9uOR8zP",
-      )
-      .then(
-        () => {
-          alert("Message sent successfully!");
-          setFormData({ name: "", email: "", service: "", message: "" });
-        },
-        () => {
-          alert("An error occurred, please try again.");
-        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
+      setFormData({ name: "", email: "", service: "", message: "" });
+      setPopup({
+        status: "success",
+        title: "Message sent",
+        message: "Thanks for reaching out. I'll get back to you soon.",
+      });
+    } catch {
+      setPopup({
+        status: "error",
+        title: "Couldn't send your message",
+        message: "Please try again later or contact me directly by email.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleOnSubmit = (e) => {
@@ -52,8 +66,7 @@ export default function Contact() {
       return;
     }
     setInvalid((prev) => ({ ...prev, email: false }));
-    alert("Submitting your message...");
-    sendEmail(e);
+    sendEmail();
   };
 
   const handleChange = (e) =>
@@ -230,8 +243,9 @@ export default function Contact() {
               <button
                 type="submit"
                 className="btn-primary w-full justify-center cursor-pointer"
+                disabled={isSubmitting}
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
@@ -327,6 +341,75 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      {popup && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-5 backdrop-blur-sm"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget && !isSubmitting) {
+              setPopup(null);
+            }
+          }}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="contact-popup-title"
+            aria-describedby="contact-popup-message"
+            className="card relative w-full max-w-md p-8 text-center shadow-2xl"
+            style={{ borderColor: "rgba(242,204,15,0.35)" }}
+          >
+            {!isSubmitting && (
+              <button
+                type="button"
+                aria-label="Close message"
+                onClick={() => setPopup(null)}
+                className="absolute right-4 top-4 rounded p-2 text-(--text-muted) transition-colors hover:text-(--gold)"
+              >
+                <X size={18} />
+              </button>
+            )}
+            <div
+              className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full"
+              style={{
+                background: "var(--gold-dim)",
+                color: "var(--gold)",
+                border: "1px solid var(--gold-mid)",
+              }}
+            >
+              {popup.status === "sending" ? (
+                <LoaderCircle size={24} className="animate-spin" />
+              ) : popup.status === "success" ? (
+                <Check size={24} />
+              ) : (
+                <CircleAlert size={24} />
+              )}
+            </div>
+            <h3
+              id="contact-popup-title"
+              className="font-display text-2xl"
+              style={{ color: "var(--text-primary)" }}
+            >
+              {popup.title}
+            </h3>
+            <p
+              id="contact-popup-message"
+              className="mt-3 text-sm leading-relaxed"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              {popup.message}
+            </p>
+            {!isSubmitting && (
+              <button
+                type="button"
+                onClick={() => setPopup(null)}
+                className="btn-primary mt-7 cursor-pointer"
+              >
+                Got it
+              </button>
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

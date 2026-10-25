@@ -43,12 +43,12 @@ export default function Home() {
           />
         </div>
         <div className="relative container mx-auto flex-1 pt-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white">
+          <p className="text-4xl md:text-5xl font-bold text-white">
             I'm <span className="text-[#F2CC0F]">Abdul Rehman</span>
+          </p>
+          <h1 className="font-display text-2xl md:text-4xl font-semibold inline-block text-white transition hover:text-[#F2CC0F] duration-300 mt-2 md:mt-4">
+            Freelance Shopify & React Developer in Karachi
           </h1>
-          <h2 className="font-display text-2xl md:text-4xl font-semibold inline-block text-white transition hover:text-[#F2CC0F] duration-300 mt-2 md:mt-4">
-            Freelance Front-End Developer
-          </h2>
           <p className="text-(--text-secondary) md:text-lg leading-relaxed mt-3 md:mt-4 sm:w-1/2">
             I'm a Shopify store developer, React developer, WordPress developer,
             and website designer available for hire. I specialize in custom
