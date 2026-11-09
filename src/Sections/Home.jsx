@@ -47,15 +47,12 @@ export default function Home() {
             I'm <span className="text-[#F2CC0F]">Abdul Rehman</span>
           </p>
           <h1 className="font-display text-2xl md:text-4xl font-semibold inline-block text-white transition hover:text-[#F2CC0F] duration-300 mt-2 md:mt-4">
-            Freelance Shopify & React Developer in Karachi
+            Shopify Websites for Cafes, Coffee Roasters and Food Brands
           </h1>
           <p className="text-(--text-secondary) md:text-lg leading-relaxed mt-3 md:mt-4 sm:w-1/2">
-            I'm a Shopify store developer, React developer, WordPress developer,
-            and website designer available for hire. I specialize in custom
-            React web app development, WordPress website development, and
-            Shopify store development. Based in Karachi, I build fast,
-            responsive, and SEO-friendly web solutions for businesses across
-            Pakistan and worldwide.
+            I build online stores and websites for cafes, coffee roasters,
+            bakeries and small food brands that want to sell more online and be
+            easy to find.
           </p>
           <ul className="flex flex-wrap gap-2 mt-5 anim-fadeUp anim-delay-3">
             {[
